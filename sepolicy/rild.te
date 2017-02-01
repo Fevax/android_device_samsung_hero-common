@@ -39,3 +39,12 @@ allow rild mnt_user_file:lnk_file { r_file_perms };
 allow rild radio_block_device:blk_file { read open };
 allow rild ctl_rildaemon_prop:property_service set;
 allow rild self:capability chown;
+
+# audioserver
+allow rild audioserver:dir search;
+allow rild audioserver:file read;
+
+###fix this, cant be unlabeled
+allow rild unlabeled:file { append open read write getattr setattr };
+
+
